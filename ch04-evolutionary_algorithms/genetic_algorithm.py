@@ -90,7 +90,7 @@ def roulette_wheel_selection(population, number_of_selections):
 def one_point_crossover(parent_a, parent_b, xover_point):
     children = [parent_a[:xover_point] + parent_b[xover_point:],
                 parent_b[:xover_point] + parent_a[xover_point:]]
-    return mutate_children(children)
+    return children
 
 
 def two_point_crossover(parent_a, parent_b, xover_point_1, xover_point_2):
@@ -99,9 +99,9 @@ def two_point_crossover(parent_a, parent_b, xover_point_1, xover_point_2):
     return children
 
 
-def mutate_children(children):
+def mutate_children(children, mutation_rate):
     for child in children:
-        random_index = random.randint(0, 25)
+        random_index = random.randint(0, mutation_rate)
         if child[INDIVIDUAL_CHROMOSOME_INDEX][random_index] == '1':
             mutated_child = list(child[INDIVIDUAL_CHROMOSOME_INDEX])
             mutated_child[random_index] = '0'
@@ -116,11 +116,11 @@ def mutate_children(children):
 def reproduce_children(chosen_selections):
     children = []
     for parent_index in range(len(chosen_selections)//2 - 1):
-        children = two_point_crossover(chosen_selections[parent_index],
+        children = one_point_crossover(chosen_selections[parent_index],
                                        chosen_selections[parent_index + 1],
-                                       CROSSOVER_POSITION_1,
-                                       CROSSOVER_POSITION_2)
+                                       CROSSOVER_POSITION_1)
     return children
+        #one_point_crossover(chosen_selections[set], chosen_selections[set + 1], CROSSOVER_POSITION_1)
 
 
 def merge_population_and_children(population, children):
@@ -130,11 +130,13 @@ def merge_population_and_children(population, children):
 NUMBER_OF_GENERATIONS = 1000
 INITIAL_POPULATION_SIZE = 1000
 KNAPSACK_WEIGHT_CAPACITY = 6404180
-CROSSOVER_POSITION_1 = 5
+CROSSOVER_POSITION_1 = 13
 CROSSOVER_POSITION_2 = 22
+MUTATION_RATE = 10
 
 
 def run_ga():
+    # Run the genetic algorithm
     best_global_fitness = 0
     global_population = generate_initial_population(INITIAL_POPULATION_SIZE)
     for generation in range(NUMBER_OF_GENERATIONS):
@@ -143,8 +145,9 @@ def run_ga():
             best_global_fitness = current_best_fitness
         the_chosen = roulette_wheel_selection(global_population, 100)
         the_children = reproduce_children(the_chosen)
-        the_children = mutate_children(the_children)
+        the_children = mutate_children(the_children, MUTATION_RATE)
         global_population = merge_population_and_children(global_population, the_children)
+        #print(global_population)
 
     print('BEST FITNESS: \t', best_global_fitness)
     print('ACTUAL BEST: \t', 13692887)
@@ -159,4 +162,10 @@ def run_ga():
     # global_population = roulette_wheel_selection(global_population, 100)
 
 
-run_ga()
+for i in range(0, 5):
+    run_ga()
+
+# print(calculate_individual_fitness('01100100010110001110001001', 6404180))
+# print(calculate_individual_fitness('00110101000100011010001000', 6404180))
+# print(calculate_individual_fitness('11100100110110000100101101', 6404180))
+# print(calculate_individual_fitness('00001000010010101101001001', 6404180))

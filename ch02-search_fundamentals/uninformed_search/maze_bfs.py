@@ -1,5 +1,5 @@
 from collections import deque
-import maze_puzzle as mp
+from uninformed_search import maze_puzzle as mp
 
 
 def run_bfs(maze_puzzle, current_point, visited_points):
@@ -26,13 +26,11 @@ def is_in_visited_points(current_point, visited_points):
     return False
 
 
-print("---Breadth First Search---")
+print("---BFS---")
 maze_game_main = mp.MazePuzzle()
 outcome = run_bfs(maze_game_main, mp.Point(2, 2), [])
 bfs_path = mp.get_path(outcome)
 print('PATH LENGTH: ', len(bfs_path))
 maze_game_main.overlay_points_on_map(bfs_path)
-print('PATH COST: ', mp.get_path_cost(outcome))
-print('PATH POINTS:')
 for point in bfs_path:
     print('Point: ', point.x, ',', point.y)

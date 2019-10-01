@@ -1,1 +1,0 @@
-print('Hello Grokking Artificial Intelligence Algorithms')

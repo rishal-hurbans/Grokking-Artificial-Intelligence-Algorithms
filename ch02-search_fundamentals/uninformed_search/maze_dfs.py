@@ -25,13 +25,12 @@ def is_in_visited_points(current_point, visited_points):
     return False
 
 
-print("---Depth First Search---")
 maze_game_main = mp.MazePuzzle()
 outcome = run_dfs(maze_game_main, mp.Point(2, 2))
+outcome.print()
 dfs_path = mp.get_path(outcome)
 print('PATH LENGTH: ', len(dfs_path))
 maze_game_main.overlay_points_on_map(dfs_path)
 print('PATH COST: ', mp.get_path_cost(outcome))
-print('PATH POINTS:')
 for point in dfs_path:
     print('Point: ', point.x, ',', point.y)
