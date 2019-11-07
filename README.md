@@ -11,3 +11,5 @@ This repository should not be consulted as the book is read page-by-page, but ra
 * Python 3.7.0+
 
 ## Setup
+Make sure that you have Python 3.7.0+ installed. [Download Python here](https://www.python.org/downloads/)
+```pip install -r requirements.txt```
