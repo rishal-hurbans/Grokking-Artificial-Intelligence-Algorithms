@@ -1,4 +1,4 @@
-from adversarial_search.other import connect_ai_alpha_beta_pruning as caab
+import connect_ai_alpha_beta_pruning as caab
 import connect_puzzle as cp
 
 connect_main = cp.Connect()

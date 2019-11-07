@@ -1,5 +1,5 @@
-from adversarial_search import connect_ai_alpha_beta_pruning as caiab
-from adversarial_search import connect_ai as cai
+import connect_ai_alpha_beta_pruning as caiab
+import connect_ai as cai
 import connect_puzzle as cp
 
 DEPTH = 10

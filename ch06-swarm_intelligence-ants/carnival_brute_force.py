@@ -5,7 +5,7 @@ import time
 
 start = time.time()
 attraction_count = 48
-attraction_data_file = "attractions-" + str(attraction_count) + ".csv"
+attraction_data_file = 'attractions-' + str(attraction_count) + '.csv'
 attraction_permutations = set(itertools.permutations(range(0, attraction_count)))
 attraction_distances = []
 with open(attraction_data_file) as file:

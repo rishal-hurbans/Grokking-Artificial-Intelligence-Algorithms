@@ -15,7 +15,7 @@ def run_dfs(maze_game, current_point):
                 for neighbor in neighbors:
                     neighbor.set_parent(next_point)
                     stack.append(neighbor)
-    return "No goal found"
+    return 'No path found'
 
 
 def is_in_visited_points(current_point, visited_points):
@@ -25,12 +25,13 @@ def is_in_visited_points(current_point, visited_points):
     return False
 
 
+print('---Depth-first Search---')
 maze_game_main = mp.MazePuzzle()
 outcome = run_dfs(maze_game_main, mp.Point(2, 2))
 outcome.print()
 dfs_path = mp.get_path(outcome)
-print('PATH LENGTH: ', len(dfs_path))
+print('Path Length: ', len(dfs_path))
 maze_game_main.overlay_points_on_map(dfs_path)
-print('PATH COST: ', mp.get_path_cost(outcome))
+print('Path Cost: ', mp.get_path_cost(outcome))
 for point in dfs_path:
     print('Point: ', point.x, ',', point.y)

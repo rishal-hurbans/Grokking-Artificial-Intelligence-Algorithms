@@ -9,7 +9,7 @@ ATTRACTION_COUNT = 48
 # Initialize the 2D matrix for storing distances between attractions
 attraction_distances = []
 # Read attraction distance data set store it in matrix
-with open("attractions-" + str(ATTRACTION_COUNT) + ".csv") as file:
+with open('attractions-' + str(ATTRACTION_COUNT) + '.csv') as file:
     reader = csv.reader(file, quoting=csv.QUOTE_NONNUMERIC)
     for row in reader:
         attraction_distances.append(row)
@@ -83,9 +83,9 @@ class Ant:
         return total_distance
 
     def print_info(self):
-        print("Ant ", self.__hash__())
-        print("Total attractions: ", len(self.visited_attractions))
-        print("Total distance: ", self.get_distance_travelled())
+        print('Ant ', self.__hash__())
+        print('Total attractions: ', len(self.visited_attractions))
+        print('Total distance: ', self.get_distance_travelled())
 
 
 class ACO:

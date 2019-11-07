@@ -1,4 +1,4 @@
-from uninformed_search import maze_puzzle as mp
+import maze_puzzle as mp
 
 
 def run_astar(maze_game, current_point):
