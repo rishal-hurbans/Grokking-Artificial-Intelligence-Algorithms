@@ -11,5 +11,16 @@ This repository should not be consulted as the book is read page-by-page, but ra
 * Python 3.7.0+
 
 ## Setup
-Make sure that you have Python 3.7.0+ installed. [Download Python here](https://www.python.org/downloads/)
+Make sure that you have Python 3.7.0+ installed. [Download Python here](https://www.python.org/downloads/).
+
+Clone this repository.
+
+Navigate to the directory that contains the repository using terminal/console/command line.
+
+Run this command to install the dependency libraries required.
+
 ```pip install -r requirements.txt```
+
+Navigate to the directory containing the example that you want to run, and run this command.
+
+```python3 <file_name.py>```
