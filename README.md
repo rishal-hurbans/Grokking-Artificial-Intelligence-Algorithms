@@ -2,6 +2,10 @@
 ## Overview
 This is the official supporting code for the book, Grokking Artificial Intelligence Algorithms, published by Manning Publications, authored by Rishal Hurbans.
 
+###[Get Grokking Artificial Intelligence Algorithms at Manning Publications](https://www.manning.com/books/grokking-artificial-intelligence-algorithms?a_aid=gaia&a_bid=6a1b836a) 
+
+![History of AI](readme_assets/history_of_ai.png)
+
 The example implementations provided will make more sense if you've read the book, however, it might be somewhat useful to you otherwise.
 
 The purpose of this repository is to act as a practical reference for examples of how the algorithms mentioned in the book can be implemented.
@@ -24,3 +28,4 @@ Run this command to install the dependency libraries required.
 Navigate to the directory containing the example that you want to run, and run this command.
 
 ```python3 <file_name.py>```
+
