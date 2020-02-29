@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
+# A data class to read and prepare data into training and testing data
 class Data:
     def __init__(self, data_file_name, excluded_features, label, encoded_categories):
         data_file = pd.read_csv(data_file_name)

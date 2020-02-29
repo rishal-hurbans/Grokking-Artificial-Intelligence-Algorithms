@@ -2,6 +2,11 @@ import csv
 import random
 import math
 
+# Ant Colony Optimization (ACO)
+# The Ant Colony Optimization algorithm is inspired by the behavior of ants moving between destinations, dropping
+# pheromones and acting on pheromones that they come across. The emergent behavior is ants converging to paths of
+# least resistance.
+
 # Set the number of attractions in the data set
 # Best for 5 attractions: 19
 # Best for 48 attractions: 33523
@@ -22,8 +27,15 @@ ALPHA = 4
 BETA = 7
 
 
+# The Ant class encompasses the idea of an ant in the ACO algorithm.
+# Ants will move to different attractions and leave pheromones behind. Ants will also make a judgement about which
+# attraction to visit next. And lastly, ants will have knowledge about their respective total distance travelled.
+# - Memory: In the ACO algorithm, this is the list of attractions already visited.
+# - Best fitness: The shortest total distance travelled across all attractions.
+# - Action: Choose the next destination to visit and drop pheromones along the way.
 class Ant:
 
+    # The ant is initialized to a random attraction with no previously visited attractions
     def __init__(self):
         self.visited_attractions = []
         self.visited_attractions.append(random.randint(0, ATTRACTION_COUNT - 1))
@@ -61,7 +73,8 @@ class Ant:
         return [possible_indexes, possible_probabilities, len(possible_attractions)]
 
     # Select an attraction using the probabilities of visiting adjacent unvisited attractions
-    def roulette_wheel_selection(self, probabilities):
+    @staticmethod
+    def roulette_wheel_selection(probabilities):
         slices = []
         total = 0
         possible_indexes = probabilities[0]
@@ -88,6 +101,26 @@ class Ant:
         print('Total distance: ', self.get_distance_travelled())
 
 
+# The ACO class encompasses the functions for the ACO algorithm consisting of many ants and attractions to visit
+# The general lifecycle of an ant colony optimization algorithm is as follows:
+
+# - Initialize the pheromone trails: This involves creating the concept of pheromone trails between attractions
+# and initializing their intensity values.
+
+# - Setup the population of ants: This involves creating a population of ants where each ant starts at a different
+# attraction.
+
+# - Choose the next visit for each ant: This involves choosing the next attraction to visit for each ant. This will
+# happen until each ant has visited all attractions exactly once.
+
+# - Update the pheromone trails: This involves updating the intensity of pheromone trails based on the ants’ movements
+# on them as well as factoring in evaporation of pheromones.
+
+# - Update the best solution: This involves updating the best solution given the total distance covered by each ant.
+
+# - Determine stopping criteria: The process of ants visiting attractions repeats for a number of iterations. One
+# iteration is every ant visiting all attractions exactly once. The stopping criteria determines the total number of
+# iterations to run. More iterations will allow ants to make better decisions based on the pheromone trails.
 class ACO:
 
     def __init__(self, number_of_ants_factor):
@@ -146,7 +179,7 @@ class ACO:
                 self.move_ants(self.ant_colony)
             self.update_pheromones(evaporation_rate)
             self.best_ant = self.get_best(self.ant_colony)
-            print(i, ' BEST DISTANCE: ', self.best_ant.get_distance_travelled())
+            print(i, ' Best distance: ', self.best_ant.get_distance_travelled())
 
 
 # Set the percentage of ants based on the total number of attractions

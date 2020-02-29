@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import statistics
-import math
 
 # Carat values for each diamond
 carats = [0.3,
@@ -37,27 +36,27 @@ mean_Y = statistics.mean(price)
 print(mean_Y)
 
 # Calculate the number of examples in the dataset
-n = len(carats)
+number_of_examples = len(carats)
 
 # Print values for x (Carats)
 print('x')
-for i in range(n):
+for i in range(number_of_examples):
     print('{0:.0f}'.format(carats[i]))
 
 # Print values for x - mean of x
 print('x - x mean')
-for i in range(n):
+for i in range(number_of_examples):
     print('{0:.0f}'.format(carats[i] - mean_X))
 
 # Print values for y - mean of y
 print('y - y mean')
-for i in range(n):
+for i in range(number_of_examples):
     print('{0:.0f}'.format(price[i] - mean_Y))
 
 # Print values for x - (x mean)^2
 print('x - (x mean)^2')
 sum_x_squared = 0
-for i in range(n):
+for i in range(number_of_examples):
     ans = (carats[i] - mean_X) ** 2
     sum_x_squared += ans
     print('{0:.0f}'.format(ans))
@@ -66,7 +65,7 @@ print('SUM squared: ', sum_x_squared)
 # Print values for x - x mean * y - y mean
 print('x - x mean) * y - y mean')
 sum_multiple = 0
-for i in range(n):
+for i in range(number_of_examples):
     ans = (carats[i] - mean_X) * (price[i] - mean_Y)
     sum_multiple += ans
     print('{0:.0f}'.format(ans))
@@ -140,10 +139,10 @@ for i in range(price_test_n):
     print('{0:.0f}'.format(ans))
 print('sum prediction: ', sum_of_price_test_prediction_difference)
 
-# Calculate the R^2 score #TODO Verify
+# Calculate the R^2 score
 ss_numerator = 0
 ss_denominator = 0
-for i in range(n):
+for i in range(number_of_examples):
     y_predicted = b0 + b1 * carats_test[i]
     ss_numerator += ((price_test[i] - mean_Y) - y_predicted) ** 2
     ss_denominator += (price_test[i] - mean_Y) ** 2

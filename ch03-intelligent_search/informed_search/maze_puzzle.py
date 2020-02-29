@@ -1,5 +1,6 @@
 import copy
 
+
 # This class is used to store the idea of a point in the maze and linking it to other points to create a path.
 class Point:
     def __init__(self, x=0, y=0):
@@ -17,11 +18,13 @@ class Point:
     def print(self):
         print(self.x, ',', self.y)
 
+
 # These constants are used to reference points on the maze that are in the respective direction of a point in question.
 NORTH = Point(0, 1)
 SOUTH = Point(0, -1)
 EAST = Point(1, 0)
 WEST = Point(-1, 0)
+
 
 # The MazePuzzle class contains the mechanics of the game
 class MazePuzzle:
@@ -30,7 +33,8 @@ class MazePuzzle:
     EMPTY = '_'
     GOAL = '*'
 
-    # Initialize the maze with a map containing; * at the goal, 0 as an empty unexplored point, and # as a point with a wall.
+    # Initialize the maze with a map containing; * at the goal, 0 as an empty unexplored point, and # as a point with
+    # a wall.
     def __init__(self, maze_size_x=5, maze_size_y=5):
         self.maze_size_x = maze_size_x
         self.maze_size_y = maze_size_y
@@ -89,6 +93,7 @@ def get_path(point):
         current_point = current_point.parent
     return path
 
+
 # Utility to find the length of a specific path given a point.
 def get_path_length(point):
     path = []
@@ -100,6 +105,7 @@ def get_path_length(point):
         current_point = current_point.parent
     return total_length
 
+
 # Utility to calculate the cost of a path if an additional cost of movement exists.
 def get_path_cost(point):
     path = []
@@ -110,6 +116,7 @@ def get_path_cost(point):
         total_cost += get_cost(get_direction(current_point.parent, current_point))
         current_point = current_point.parent
     return total_cost
+
 
 # Utility to determine the cost of a specific move.
 def get_move_cost(origin, target):
@@ -126,6 +133,7 @@ def get_direction(origin, target):
         return 'E'
     else:
         return 'W'
+
 
 # Utility to determine the cost of a move given a direction. In this case, North and South is 5, and East and West is 1.
 def get_cost(direction):

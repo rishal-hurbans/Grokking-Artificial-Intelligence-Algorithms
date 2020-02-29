@@ -1,14 +1,9 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import collections
 from sklearn import tree
 from sklearn import metrics
-from sklearn import ensemble
 from ml_data_preparation import Data
-import numpy as np
-import pydotplus
 
+
+# Encode the string values for "cut", "color", and "clarity" as integer values
 encoding_categories = {'cut': {'Fair': 1, 'Good': 1, 'Very Good': 2, 'Premium': 2, 'Ideal': 2},
                        'color': {'D': 7, 'E': 6, 'F': 5, 'G': 4, 'H': 3, 'I': 2, 'J': 1},
                        'clarity': {'FL': 11, 'IF': 10, 'VVS1': 9, 'VVS2': 8, 'VS1': 7, 'VS2': 6, 'SI1': 5, 'SI2': 4, 'I1': 3, 'I2': 2, 'I3': 1}}
