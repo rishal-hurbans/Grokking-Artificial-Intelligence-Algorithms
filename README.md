@@ -2,7 +2,7 @@
 ## Overview
 This is the official supporting code for the book, Grokking Artificial Intelligence Algorithms, published by Manning Publications, authored by Rishal Hurbans.
 
-###[Get Grokking Artificial Intelligence Algorithms at Manning Publications](https://www.manning.com/books/grokking-artificial-intelligence-algorithms?a_aid=gaia&a_bid=6a1b836a) 
+[Get Grokking Artificial Intelligence Algorithms at Manning Publications](https://www.manning.com/books/grokking-artificial-intelligence-algorithms?a_aid=gaia&a_bid=6a1b836a) 
 
 ![History of AI](readme_assets/history_of_ai.png)
 
