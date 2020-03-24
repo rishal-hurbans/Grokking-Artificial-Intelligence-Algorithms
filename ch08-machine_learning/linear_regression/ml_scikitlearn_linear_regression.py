@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 from sklearn import metrics
 from sklearn import linear_model
+import sys
+sys.path.append('../')
 from ml_data_preparation import Data
 
 

@@ -1,6 +1,8 @@
 import collections
 from sklearn import tree
 from sklearn import metrics
+import sys
+sys.path.append('../')
 from ml_data_preparation import Data
 import pydotplus
 
