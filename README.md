@@ -23,7 +23,7 @@ Navigate to the directory that contains the repository using terminal/console/co
 
 Run this command to install the dependency libraries required.
 
-```pip install -r requirements.txt```
+```pip3 install -r requirements.txt```
 
 Navigate to the directory containing the example that you want to run, and run this command.
 
