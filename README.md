@@ -1,5 +1,9 @@
 # Grokking Artificial Intelligence Algorithms
 
+## Requirements
+* Python 3.7.0+
+* Pip 3
+
 ## Setup
 Make sure that you have Python 3.7.0+ installed. [Download Python here](https://www.python.org/downloads/).
 
@@ -28,6 +32,4 @@ The example implementations provided will make more sense if you've read the boo
 The purpose of this repository is to act as a practical reference for examples of how the algorithms mentioned in the book can be implemented.
 This repository should not be consulted as the book is read page-by-page, but rather, when you're attempting to implement an algorithm or gain a more technical understanding from a programming perspective.
 
-## Requirements
-* Python 3.7.0+
 
