@@ -1,5 +1,7 @@
 # Grokking Artificial Intelligence Algorithms
 
+[Get Grokking Artificial Intelligence Algorithms at Manning Publications](https://www.manning.com/books/grokking-artificial-intelligence-algorithms?a_aid=gaia&a_bid=6a1b836a) 
+
 ## Requirements
 * Python 3.7.0+
 * Pip 3
@@ -22,8 +24,6 @@ Navigate to the directory containing the example that you want to run, and run t
 
 ## Overview
 This is the official supporting code for the book, Grokking Artificial Intelligence Algorithms, published by Manning Publications, authored by Rishal Hurbans.
-
-[Get Grokking Artificial Intelligence Algorithms at Manning Publications](https://www.manning.com/books/grokking-artificial-intelligence-algorithms?a_aid=gaia&a_bid=6a1b836a) 
 
 ![History of AI](readme_assets/history_of_ai.png)
 
