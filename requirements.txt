@@ -7,6 +7,7 @@ chart-studio==1.0.0
 cycler==0.10.0
 gast==0.2.2
 google-pasta==0.1.7
+graphviz==0.13.2
 grpcio==1.23.0
 h5py==2.9.0
 idna==2.8
