@@ -10,9 +10,9 @@ The general flow for forward propagation includes the following steps:
 5.	Sum results of weighted outputs of hidden nodes to the output node: Sum the weighted results of the activation function from all hidden nodes.
 6.	Activation function for output node:  Apply an activation function on the result of the summed weighted hidden node results.
 
-![Forward Propagation 1](readme_assets/Ex-ANN-exercise-solution-1.png)
+![Forward propagation 1](readme_assets/Ex-ANN-exercise-solution-1.png)
 
-![Forward Propagation 2](readme_assets/Ex-ANN-exercise-solution-2.png)
+![Forward propagation 2](readme_assets/Ex-ANN-exercise-solution-2.png)
 
 ## Back Propagation
 Phase A: Setup
@@ -24,7 +24,7 @@ Phase C: Training
 2.	Update weights in the ANN: The weights of the ANN are the only thing that can be adjusted by the network itself. The architecture and configurations that we defined in phase A doesn’t change during training the network. The weights are essentially encoding the “intelligence” of the network. Weights are adjusted to be larger or smaller which impacts the strength of the inputs. 
 3.	Stopping condition: Training cannot happen indefinitely. Similarly to many of the algorithms explored in this book, a sensible stopping condition needs to be determined. If we have a large dataset, we might decide that we will use 500 examples in our training dataset over 1000 iterations to train the ANN. This means that the 500 examples will be passed through the network 1000 times and adjust the weights in every iteration. 
 
-![Back Propagation](readme_assets/ANN-backpropagation-chain-calc-adjust.png)
+![Back propagation](readme_assets/ANN-backpropagation-chain-calc-adjust.png)
 
 ## Summary
-![Chapter 9 Summary](readme_assets/Ch9-Summary.png)
+![Chapter 9 summary](readme_assets/Ch9-Summary.png)

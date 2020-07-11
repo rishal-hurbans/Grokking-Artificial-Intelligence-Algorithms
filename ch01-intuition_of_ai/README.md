@@ -4,4 +4,4 @@ Intelligence is a mystery. Intelligence is a concept that has no agreed upon def
 This directory does not contain any code since there are no specific algorithm implementations discussed in Chapter 1.
 
 ## Summary
-![Chapter 1 Summary](readme_assets/Ch1-Summary.png)
+![Chapter 1 summary](readme_assets/Ch1-Summary.png)

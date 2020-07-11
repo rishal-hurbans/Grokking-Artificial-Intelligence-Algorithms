@@ -3,7 +3,7 @@ Similarly to the theory of evolution, the observation of the behavior of lifefor
 
 The Ant Colony Optimization algorithm is inspired by the behavior of ants moving between destinations, dropping pheromones and acting on pheromones that they come across. The emergent behavior is ants converging to paths of least resistance.  
 
-![ACO Update](readme_assets/ACO-Update.png)
+![ACO update](readme_assets/ACO-Update.png)
 
 ## Summary
-![Chapter 6 Summary](readme_assets/Ch6-Summary.png)
+![Chapter 6 summary](readme_assets/Ch6-Summary.png)

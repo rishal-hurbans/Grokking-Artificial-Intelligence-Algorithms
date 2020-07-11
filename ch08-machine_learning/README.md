@@ -6,13 +6,13 @@ One of the most common techniques in traditional machine learning is supervised 
 ## Liner Regression
 Linear regression is one of the simplest machine learning algorithms that finds relationships between two variables and allows us to predict one variable given the other. An example of this is predicting the price of a diamond based on its caret value. By looking at many examples of known diamonds including their price and caret values, we can teach a model the relationship and ask it to estimate predictions.
  
-![Linear Regression Example](readme_assets/Possible-regression-lines.png)
-![Linear Regression Calculation](readme_assets/Calculating-regression-line.png)
+![Linear regression example](readme_assets/Possible-regression-lines.png)
+![Linear regression calculation](readme_assets/Calculating-regression-line.png)
 
 ## Decision Trees
 Decision trees are structures that describe a series of decisions that are made to find a solution to a problem. If we’re deciding whether or not to wear shorts for the day, we might make a series of decisions to inform the outcome. Will it be cold during the day? If not, will we be out late in the evening when it does get cold? We might decide to wear shorts on a warm day, but not if we will be out when it gets cold.
 
-![Decision Tree Example](readme_assets/cl_human_diamond_tree.png)
+![Decision tree example](readme_assets/cl_human_diamond_tree.png)
 
 ## Summary
-![Chapter 8 Summary](readme_assets/Ch8-Summary.png)
+![Chapter 8 summary](readme_assets/Ch8-Summary.png)

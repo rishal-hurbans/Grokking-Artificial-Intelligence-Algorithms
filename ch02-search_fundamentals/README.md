@@ -7,4 +7,4 @@ Think about when you explore things you want to learn. Some might look at a wide
 ![BFS and DFS](readme_assets/Bfs-Dfs-Combined.png)
 
 ## Summary
-![Chapter 2 Summary](readme_assets/Ch2-Summary.png)
+![Chapter 2 summary](readme_assets/Ch2-Summary.png)
