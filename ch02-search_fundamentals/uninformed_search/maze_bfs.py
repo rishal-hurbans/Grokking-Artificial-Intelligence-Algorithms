@@ -49,7 +49,8 @@ print('---Breadth-first Search---')
 maze_game_main = mp.MazePuzzle()
 
 # Run the breadth first search algorithm with the initialized maze
-outcome = run_bfs(maze_game_main, mp.Point(2, 2), [])
+starting_point = mp.Point(2, 2)
+outcome = run_bfs(maze_game_main, starting_point, [])
 
 # Get the path found by the breadth first search algorithm
 bfs_path = mp.get_path(outcome)

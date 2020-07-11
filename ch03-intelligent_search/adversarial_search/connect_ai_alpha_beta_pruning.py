@@ -1,11 +1,12 @@
 import copy
 import random
+import math
 
 # Set the min-max IDs, and pseudo infinity constants
 MIN = -1
 MAX = 1
-INFINITY_POSITIVE = 999
-INFINITY_NEGATIVE = -999
+INFINITY_POSITIVE = math.inf
+INFINITY_NEGATIVE = -math.inf
 
 
 # This class contains a move and the respective value earned for that move

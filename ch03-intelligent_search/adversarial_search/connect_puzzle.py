@@ -36,7 +36,7 @@ class Connect:
     def print_board(self):
         result = ''
         for y in range(0, self.board_size_y):
-            for x in range(self.board_size_x - 1, -1, -1):
+            for x in range(0, self.board_size_x):
                 result += self.board[x][y]
             result += '\n'
         print(result)
@@ -133,11 +133,13 @@ class Connect:
 
     # Execute a move for a player if there's space in the slot and choose the player based on whose turn it is
     def play_move(self, slot):
-        if not self.is_slot_full(slot):
-            if self.player_turn == PLAYERS[PLAYER_AI]:
-                self.execute_move(PLAYER_AI, slot)
-            else:
-                self.execute_move(PLAYER_HUMAN, slot)
-            self.player_turn *= -1
-            return True
+        if 0 <= slot <= 4:
+            if not self.is_slot_full(slot):
+                if self.player_turn == PLAYERS[PLAYER_AI]:
+                    self.execute_move(PLAYER_AI, slot)
+                else:
+                    self.execute_move(PLAYER_HUMAN, slot)
+                self.player_turn *= -1
+                return True
+            return False
         return False

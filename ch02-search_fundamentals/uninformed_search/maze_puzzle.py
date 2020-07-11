@@ -1,4 +1,5 @@
 import copy
+import math
 
 
 # This class is used to store the idea of a point in the maze and linking it to other points to create a path.
@@ -7,7 +8,7 @@ class Point:
         self.x = x
         self.y = y
         self.parent = None
-        self.cost = 99999
+        self.cost = math.inf
 
     def set_parent(self, p):
         self.parent = p
@@ -50,8 +51,8 @@ class MazePuzzle:
     # Return all valid neighbors around a specific point, excluding points outside of the maze and walls.
     def get_neighbors(self, current_point):
         neighbors = []
-        # potential_neighbors = [[0, -1], [1, 0], [0, 1], [-1, 0]]
-        potential_neighbors = [[SOUTH.x, SOUTH.y], [WEST.x, WEST.y], [NORTH.x, NORTH.y], [EAST.x, EAST.y]]
+        # potential_neighbors = [[0, 1], [0, -1], [1, 0], [-1, 0]]
+        potential_neighbors = [[NORTH.x, NORTH.y], [SOUTH.x, SOUTH.y], [EAST.x, EAST.y], [WEST.x, WEST.y]]
         for neighbor in potential_neighbors:
             target_point = Point(current_point.x + neighbor[0], current_point.y + neighbor[1])
             if 0 <= target_point.x < self.maze_size_x and 0 <= target_point.y < self.maze_size_y:
@@ -131,12 +132,16 @@ def get_direction(origin, target):
         return 'S'
     elif target.x == origin.x + 1 and target.y == origin.y:
         return 'E'
-    else:
+    elif target.x == origin.x - 1 and target.y == origin.y:
         return 'W'
 
 
 # Utility to determine the cost of a move given a direction. In this case, North and South is 5, and East and West is 1.
+STANDARD_COST = 1
+GRAVITY_COST = 5
+
+
 def get_cost(direction):
     if direction == 'N' or direction == 'S':
-        return 5
-    return 1
+        return GRAVITY_COST
+    return STANDARD_COST

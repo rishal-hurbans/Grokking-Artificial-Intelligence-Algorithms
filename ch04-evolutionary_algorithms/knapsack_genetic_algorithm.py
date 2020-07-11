@@ -121,13 +121,17 @@ def set_probabilities(population):
 # Roulette wheel selection to select individuals in a population
 def roulette_wheel_selection(population, number_of_selections):
     set_probabilities(population)
+    slices = []
+    total = 0
+    for r in range(0, len(population)):
+        individual = population[r]
+        slices.append([r, total, total + individual[INDIVIDUAL_PROBABILITY_INDEX]])
+        total += individual[INDIVIDUAL_PROBABILITY_INDEX]
     chosen_ones = []
-    for selection in range(number_of_selections):
-        r = random.random()
-        for individual in population:
-            if r <= individual[INDIVIDUAL_PROBABILITY_INDEX]:
-                chosen_ones.append(individual)
-                break
+    for r in range(number_of_selections):
+        spin = random.random()
+        result = [s[0] for s in slices if s[1] < spin <= s[2]]
+        chosen_ones.append(population[result[0]])
     return chosen_ones
 
 

@@ -12,7 +12,7 @@ import numpy as np
 # - Apply action to environment: This involves having the agent applying an action to the environment.
 # The environment will be impacted by the action which may result in a reward.
 
-# - Calculate the reward of an action: This is related to the “apply action to environment” function.
+# - Calculate the reward of an action: This is related to the "apply action to environment” function.
 # The reward for the action and impact in the environment needs to be calculated.
 
 # - Determine if the goal is achieved: This function results in whether or not the agent has achieved the goal.
@@ -169,7 +169,8 @@ class Simulator:
 
 # Execute a known most rewarding path
 def execute_happy_path():
-    simulator = Simulator(DEFAULT_ROAD, DEFAULT_ROAD_SIZE_X, DEFAULT_ROAD_SIZE_Y, DEFAULT_START_X, DEFAULT_START_Y, DEFAULT_GOAL_X, DEFAULT_GOAL_Y)
+    simulator = Simulator(DEFAULT_ROAD, DEFAULT_ROAD_SIZE_X, DEFAULT_ROAD_SIZE_Y, DEFAULT_START_X, DEFAULT_START_Y,
+                          DEFAULT_GOAL_X, DEFAULT_GOAL_Y)
     simulator.print_road()
     simulator.move_agent(COMMAND_SOUTH)
     simulator.move_agent(COMMAND_SOUTH)
@@ -190,7 +191,8 @@ def execute_happy_path():
 
 # Execute a known path with penalties
 def execute_sad_path():
-    simulator = Simulator(DEFAULT_ROAD, DEFAULT_ROAD_SIZE_X, DEFAULT_ROAD_SIZE_Y, DEFAULT_START_X, DEFAULT_START_Y, DEFAULT_GOAL_X, DEFAULT_GOAL_Y)
+    simulator = Simulator(DEFAULT_ROAD, DEFAULT_ROAD_SIZE_X, DEFAULT_ROAD_SIZE_Y, DEFAULT_START_X, DEFAULT_START_Y,
+                          DEFAULT_GOAL_X, DEFAULT_GOAL_Y)
     simulator.print_road()
     simulator.move_agent(COMMAND_NORTH)
     simulator.move_agent(COMMAND_WEST)
@@ -201,7 +203,8 @@ def execute_sad_path():
 
 # Execute a random brute force approach until the goal is found
 def execute_random_brute_force():
-    simulator = Simulator(DEFAULT_ROAD, DEFAULT_ROAD_SIZE_X, DEFAULT_ROAD_SIZE_Y, DEFAULT_START_X, DEFAULT_START_Y, DEFAULT_GOAL_X, DEFAULT_GOAL_Y)
+    simulator = Simulator(DEFAULT_ROAD, DEFAULT_ROAD_SIZE_X, DEFAULT_ROAD_SIZE_Y, DEFAULT_START_X, DEFAULT_START_Y,
+                          DEFAULT_GOAL_X, DEFAULT_GOAL_Y)
     simulator.print_road()
     while not simulator.is_goal_achieved():
         simulator.move_agent(get_random_action())
@@ -236,14 +239,18 @@ def execute_random_brute_force():
 
 # - Update Q-table: The following describes the concepts involved in updating the Q-table and the steps that are
 # carried out.
-def train_with_q_learning(observation_space, action_space, number_of_iterations, learning_rate, discount, chance_of_random_move):
+# Learning rate is represented as alpha in the book.
+# Discount is represented as gamma in the book.
+def train_with_q_learning(observation_space, action_space, number_of_iterations, learning_rate, discount,
+                          chance_of_random_move):
     # Initialize the Q-table
     q_table = np.zeros([observation_space, action_space], dtype=np.int8)
 
     # Repeat for a number of iterations
     for i in range(number_of_iterations):
         # Reset the simulator
-        simulator = Simulator(DEFAULT_ROAD, DEFAULT_ROAD_SIZE_X, DEFAULT_ROAD_SIZE_Y, DEFAULT_START_X, DEFAULT_START_Y, DEFAULT_GOAL_X, DEFAULT_GOAL_Y)
+        simulator = Simulator(DEFAULT_ROAD, DEFAULT_ROAD_SIZE_X, DEFAULT_ROAD_SIZE_Y, DEFAULT_START_X, DEFAULT_START_Y,
+                              DEFAULT_GOAL_X, DEFAULT_GOAL_Y)
         state = simulator.get_state()
         done = False
 

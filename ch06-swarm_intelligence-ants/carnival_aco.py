@@ -8,8 +8,8 @@ import math
 # least resistance.
 
 # Set the number of attractions in the data set
-# Best for 5 attractions: 19
-# Best for 48 attractions: 33523
+# Best total distance for 5 attractions: 19
+# Best total distance for 48 attractions: 33523
 ATTRACTION_COUNT = 48
 # Initialize the 2D matrix for storing distances between attractions
 attraction_distances = []

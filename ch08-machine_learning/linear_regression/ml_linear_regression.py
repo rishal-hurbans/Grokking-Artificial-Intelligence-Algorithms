@@ -152,9 +152,6 @@ print('R2: ', r2)
 # Plot the data on a figure to better understand visually
 fig = plt.figure()
 plt.figure(num=None, figsize=(5, 5), dpi=300, facecolor='w', edgecolor='w')
-# Use a custom font for the figure, this can be removed
-font = {'fontname': 'RHComicScript1'}
-plt.rcParams['font.family'] = 'RHCodeScript1'
 
 # Plot the original training data in red
 plt.scatter(carats, price, color='red', label='Scatter Plot')
@@ -168,7 +165,7 @@ rex_x = [300, 2210]
 rex_y = [515.7, 6511.19]
 plt.plot(rex_x, rex_y, color='green')
 # Label the figure, save it, and show it
-plt.xlabel('Carat', font)
-plt.ylabel('Price', font)
+plt.xlabel('Carat')
+plt.ylabel('Price')
 plt.savefig('carat_vs_price_test_scatter.png')
 plt.show()

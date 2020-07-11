@@ -56,8 +56,8 @@ def get_all_combinations(items):
     combinations = []
     for index in range(0, len(items)):
         combinations.append(items[index])
-        els = [list(x) for x in itertools.combinations(items, index)]
-        combinations.append(els)
+        possibilities = [list(x) for x in itertools.combinations(items, index)]
+        combinations.append(possibilities)
     return combinations
 
 

@@ -1,10 +1,15 @@
 cycler==0.10.0
+entrypoints==0.3
+flake8==3.7.9
 joblib==0.14.1
 kiwisolver==1.2.0
 matplotlib==3.2.1
+mccabe==0.6.1
 numpy==1.18.4
 pandas==1.0.3
+pycodestyle==2.5.0
 pydotplus==2.0.2
+pyflakes==2.1.1
 pyparsing==2.4.7
 python-dateutil==2.8.1
 pytz==2020.1

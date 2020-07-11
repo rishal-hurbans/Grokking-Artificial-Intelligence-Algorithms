@@ -2,7 +2,7 @@ import numpy as np
 
 # The Perceptron
 # The neuron is the fundamental concept that makes up the brain and nervous systems.
-# Tt accepts many inputs from other neurons, processes those inputs, and transfers the result to other “connected”
+# It accepts many inputs from other neurons, processes those inputs, and transfers the result to other “connected”
 # neurons. Artificial neural networks are based on the fundamental concept of the Perceptron. The Perceptron is a
 # logical representation of a single biological neuron.
 
