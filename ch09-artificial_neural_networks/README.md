@@ -15,7 +15,6 @@ The general flow for forward propagation includes the following steps:
 ![Forward propagation 2](readme_assets/Ex-ANN-exercise-solution-2.png)
 
 ## Back Propagation
-Phase A: Setup
 1.	Define ANN architecture: This involves defining the input nodes, the output nodes, the number of hidden layers, the number of neurons in each hidden layer, the activation functions used, and more. We will dive into some of these details in the next section. For now, we will stick to the same ANN architecture that we have already used in the previous section.
 2.	Initialize ANN weights: The weights in the ANN must be initialized to some value. There are various approaches to this, however, the key principle is that the weights will be constantly adjusted as the ANN learns from training examples but we need to start somewhere.
 Phase B: Forward propagation: This is the same process that we covered in the previous section. The same calculations are carried out; however, the predicted output will be compared with the actual class for each example in the training set to train the network.
