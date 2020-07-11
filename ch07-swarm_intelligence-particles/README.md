@@ -4,4 +4,4 @@ Particle swarm optimization involves a group of individuals at different points 
 ![PSO Velocity Update](readme_assets/PSO-Velocity-Vis.png)
 
 ## Summary
-![Chapter 6 Summary](readme_assets/Ch7-Summary-PSO.png)
+![Chapter 6 Summary](readme_assets/Ch7-Summary.png)

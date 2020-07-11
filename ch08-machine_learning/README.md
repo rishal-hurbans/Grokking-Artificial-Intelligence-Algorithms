@@ -14,4 +14,4 @@ Decision trees are structures that describe a series of decisions that are made 
 ![Decision Tree Example](readme_assets/cl_human_diamond_tree.png)
 
 ## Summary
-![Chapter 8 Summary](readme_assets/ML-Summary.png)
+![Chapter 8 Summary](readme_assets/Ch8-Summary.png)

@@ -6,4 +6,4 @@ In RL with Q-learning, there is a concept of a reward table – it’s called a 
 ![PSO Velocity Update](readme_assets/RL-Intuition.png)
 
 ## Summary
-![Chapter 10 Summary](readme_assets/RL-Summary.png)
+![Chapter 10 Summary](readme_assets/Ch10-Summary.png)

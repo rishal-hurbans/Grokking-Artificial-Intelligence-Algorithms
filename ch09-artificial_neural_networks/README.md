@@ -27,4 +27,4 @@ Phase C: Training
 ![Back Propagation](readme_assets/ANN-backpropagation-chain-calc-adjust.png)
 
 ## Summary
-![Chapter 9 Summary](readme_assets/ANN-Summary.png)
+![Chapter 9 Summary](readme_assets/Ch9-Summary.png)

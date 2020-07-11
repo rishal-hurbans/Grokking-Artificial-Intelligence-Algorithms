@@ -6,4 +6,4 @@ The Ant Colony Optimization algorithm is inspired by the behavior of ants moving
 ![ACO Update](readme_assets/ACO-Update.png)
 
 ## Summary
-![Chapter 6 Summary](readme_assets/Ch6-Summary-Ants.png)
+![Chapter 6 Summary](readme_assets/Ch6-Summary.png)
