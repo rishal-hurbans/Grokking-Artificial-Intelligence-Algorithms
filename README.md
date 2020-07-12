@@ -8,6 +8,9 @@
 
 ## Setup
 Make sure that you have Python 3.7.0+ installed. [Download Python here](https://www.python.org/downloads/).
+pip3 should be installed with Python 3.7.0+ on macOS and Windows. You may need to install pip3 seperately if you're using Linux.
+Use the ```sudo apt-get install python3-pip``` command if you're using Ubuntu or Debian Linux.
+Use the ```sudo yum install python3-pip``` command if you're using Fedora Linux. 
 
 Clone this repository.
 
