@@ -16,3 +16,23 @@ Decision trees are structures that describe a series of decisions that are made 
 
 ## Summary
 ![Chapter 8 summary](readme_assets/Ch8-Summary.png)
+
+## What's Included
+- Data preparation and visualization helpers for tabular datasets.
+- Linear regression from scratch and with scikit‑learn.
+- Decision trees from scratch and with scikit‑learn.
+
+## Key Scripts
+- `ml_data_preparation.py`, `ml_dataviz.py`: Utilities and plots.
+- `linear_regression/ml_linear_regression.py`: Simple linear regression.
+- `linear_regression/ml_scikitlearn_linear_regression.py`: scikit‑learn version.
+- `decision_trees/ml_decision_tree.py`: Simple decision tree.
+- `decision_trees/ml_scikitlearn_decision_tree_classification.py`: scikit‑learn version.
+
+## How To Run
+- From this folder or subfolders:
+  - `python3 linear_regression/ml_linear_regression.py`
+  - `python3 decision_trees/ml_decision_tree.py`
+
+## Notes
+- The dataset `diamonds.csv` is included; adjust features and splits to explore model behavior.

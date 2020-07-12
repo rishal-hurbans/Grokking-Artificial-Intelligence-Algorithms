@@ -5,3 +5,17 @@ Particle swarm optimization involves a group of individuals at different points 
 
 ## Summary
 ![Chapter 6 summary](readme_assets/Ch7-Summary.png)
+
+## What's Included
+- Particle Swarm Optimization (PSO) over a 2D objective (Booth function).
+- Inertia, cognitive, and social components for velocity updates.
+
+## Key Scripts
+- `drone_pso.py`: PSO simulation with adjustable swarm size and iterations.
+
+## How To Run
+- From this folder:
+  - `python3 drone_pso.py`
+
+## Notes
+- Experiment with inertia, cognitive, and social constants to balance exploration vs. exploitation.

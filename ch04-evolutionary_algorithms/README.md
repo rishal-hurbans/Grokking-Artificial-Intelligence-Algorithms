@@ -8,3 +8,19 @@ The example used is the Knapsack Problem. The Knapsack Problem has number of ite
 
 ## Summary
 ![Chapter 4 summary](readme_assets/Ch4-Summary.png)
+
+## What's Included
+- Brute‑force and Genetic Algorithm (GA) solutions to the Knapsack problem.
+- Binary encoding of solutions, fitness evaluation, crossover, and mutation.
+
+## Key Scripts
+- `knapsack_brute_force.py`: Exhaustive enumeration of feasible packs.
+- `knapsack_genetic_algorithm.py`: GA search with configurable hyperparameters.
+
+## How To Run
+- From this folder:
+  - `python3 knapsack_brute_force.py`
+  - `python3 knapsack_genetic_algorithm.py`
+
+## Notes
+- Adjust population size, mutation rate, and generations to see convergence behavior.

@@ -133,7 +133,7 @@ class Connect:
 
     # Execute a move for a player if there's space in the slot and choose the player based on whose turn it is
     def play_move(self, slot):
-        if 0 <= slot <= 4:
+        if 0 <= slot < self.board_size_x:
             if not self.is_slot_full(slot):
                 if self.player_turn == PLAYERS[PLAYER_AI]:
                     self.execute_move(PLAYER_AI, slot)

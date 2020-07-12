@@ -8,3 +8,20 @@ Think about when you explore things you want to learn. Some might look at a wide
 
 ## Summary
 ![Chapter 2 summary](readme_assets/Ch2-Summary.png)
+
+## What's Included
+- Breadth-first Search (BFS) and Depth-first Search (DFS) on a simple maze.
+- Problem representation and state expansion basics.
+
+## Key Scripts
+- `uninformed_search/maze_bfs.py`: BFS over a grid maze.
+- `uninformed_search/maze_dfs.py`: DFS over a grid maze.
+- `uninformed_search/maze_puzzle.py`: Maze definition and utilities.
+
+## How To Run
+- From this folder:
+  - `python3 uninformed_search/maze_bfs.py`
+  - `python3 uninformed_search/maze_dfs.py`
+
+## Notes
+- Compare traversal order and path length differences between BFS and DFS.

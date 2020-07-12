@@ -9,3 +9,17 @@ In RL with Q-learning, there is a concept of a reward table – it’s called a 
 
 ## Summary
 ![Chapter 10 summary](readme_assets/Ch10-Summary.png)
+
+## What's Included
+- A simple grid‑road simulator with rewards, penalties, and a goal.
+- Q‑learning loop that updates a Q‑table over states and actions.
+
+## Key Scripts
+- `auto_simulator.py`: Environment, reward logic, and example paths.
+
+## How To Run
+- From this folder:
+  - `python3 auto_simulator.py`
+
+## Notes
+- Try different reward values and exploration strategies to see how the learned policy changes.

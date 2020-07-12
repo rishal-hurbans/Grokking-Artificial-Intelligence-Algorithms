@@ -17,3 +17,23 @@ Min-max search aims to build a tree of possible outcomes based on moves that eac
 
 ## Summary
 ![Chapter 3 summary](readme_assets/Ch3-Summary.png) 
+
+## What's Included
+- A* search with heuristic guidance on a maze.
+- Adversarial search with min‑max and alpha‑beta pruning.
+
+## Key Scripts
+- `informed_search/maze_astar.py`: A* pathfinding example.
+- `adversarial_search/connect_puzzle.py`: Game state mechanics.
+- `adversarial_search/connect_ai.py`: Min‑max AI for Connect.
+- `adversarial_search/connect_ai_alpha_beta_pruning.py`: Alpha‑beta optimized AI.
+- `adversarial_search/connect_puzzle_game.py`: Simple playable loop.
+
+## How To Run
+- A*:
+  - `python3 informed_search/maze_astar.py`
+- Connect AI demo:
+  - `python3 adversarial_search/connect_puzzle_game.py`
+
+## Notes
+- Try varying search depth in the adversarial AI to observe strength vs. speed trade‑offs.

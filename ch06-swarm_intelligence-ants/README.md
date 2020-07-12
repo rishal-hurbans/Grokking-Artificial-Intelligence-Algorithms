@@ -7,3 +7,20 @@ The Ant Colony Optimization algorithm is inspired by the behavior of ants moving
 
 ## Summary
 ![Chapter 6 summary](readme_assets/Ch6-Summary.png)
+
+## What's Included
+- Ant Colony Optimization (ACO) on a set of attractions with distances.
+- Pheromone trails, evaporation, and probabilistic path construction.
+
+## Key Scripts
+- `carnival_brute_force.py`: Exhaustive tour construction for small instances.
+- `carnival_aco.py`: ACO solver with pheromone updates and evaporation.
+- CSV data: `attractions-*.csv` distance matrices.
+
+## How To Run
+- From this folder:
+  - `python3 carnival_brute_force.py`
+  - `python3 carnival_aco.py`
+
+## Notes
+- Tweak parameters (alpha, beta, evaporation rate, ant count) to see convergence on different datasets.

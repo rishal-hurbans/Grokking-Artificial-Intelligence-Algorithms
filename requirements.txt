@@ -3,7 +3,7 @@ entrypoints==0.3
 flake8==3.7.9
 joblib==0.14.1
 kiwisolver==1.2.0
-matplotlib==3.2.1
+matplotlib==3.7.1
 mccabe==0.6.1
 numpy==1.18.4
 pandas==1.0.3
@@ -18,3 +18,4 @@ scipy==1.4.1
 seaborn==0.10.1
 six==1.14.0
 sklearn==0.0
+torch

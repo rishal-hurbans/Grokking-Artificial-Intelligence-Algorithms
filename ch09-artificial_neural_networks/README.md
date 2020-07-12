@@ -27,3 +27,19 @@ Phase C: Training
 
 ## Summary
 ![Chapter 9 summary](readme_assets/Ch9-Summary.png)
+
+## What's Included
+- From‑scratch demonstrations of forward and backpropagation.
+- Simple perceptron and small ANN examples.
+
+## Key Scripts
+- `perceptron.py`: A minimal perceptron classifier.
+- `car_ann.py`: Tiny feedforward network example and training loop.
+
+## How To Run
+- From this folder:
+  - `python3 perceptron.py`
+  - `python3 car_ann.py`
+
+## Notes
+- Modify layer sizes, learning rate, and activation functions to see impact on training dynamics.
