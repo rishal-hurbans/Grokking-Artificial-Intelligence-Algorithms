@@ -2,6 +2,10 @@
 
 [Get Grokking Artificial Intelligence Algorithms at Manning Publications](https://www.manning.com/books/grokking-artificial-intelligence-algorithms?a_aid=gaia&a_bid=6a1b836a) 
 
+Rather Learn by exploring the code notebook in your browser? Click here:
+
+[![Open the interactive code notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rishal-hurbans/Grokking-Artificial-Intelligence-Algorithms-Notebook/blob/main/Grokking_Artificial_Intelligence_Algorithms_Notebook.ipynb)
+
 ## Requirements
 * Python 3.7.0+
 * Pip 3
