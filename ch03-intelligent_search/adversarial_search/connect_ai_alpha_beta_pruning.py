@@ -38,7 +38,7 @@ def minmax(connect, depth, min_or_max, move, alpha, beta):
     best_score = INFINITY_NEGATIVE * min_or_max
     best_max_move = -1
     # Get possible moves given the board size
-    moves = random.sample(range(0, connect.board_size_y + 1), connect.board_size_x)
+    moves = random.sample(range(0, connect.board_size_x), connect.board_size_x)
     for slot in moves:
         neighbor = copy.deepcopy(connect)
         move_outcome = neighbor.play_move(slot)
