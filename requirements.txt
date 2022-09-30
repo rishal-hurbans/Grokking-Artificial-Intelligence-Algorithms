@@ -1,7 +1,7 @@
 cycler==0.10.0
 entrypoints==0.3
 flake8==3.7.9
-joblib==0.14.1
+joblib==1.2.0
 kiwisolver==1.2.0
 matplotlib==3.2.1
 mccabe==0.6.1
