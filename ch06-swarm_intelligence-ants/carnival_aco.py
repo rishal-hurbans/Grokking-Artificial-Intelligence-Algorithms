@@ -22,7 +22,7 @@ with open('attractions-' + str(ATTRACTION_COUNT) + '.csv') as file:
 # Set the probability of ants choosing a random attraction to visit (0.0 - 1.0)
 RANDOM_ATTRACTION_FACTOR = 0.0
 # Set the weight for pheromones on path for selection
-ALPHA = 4
+ALPHA = 5
 # Set the weight for heuristic of path for selection
 BETA = 7
 
@@ -52,7 +52,7 @@ class Ant:
     def visit_random_attraction(self):
         all_attractions = set(range(0, ATTRACTION_COUNT))
         possible_attractions = all_attractions - set(self.visited_attractions)
-        return random.randint(0, len(possible_attractions) - 1)
+        return possible_attractions.pop()
 
     # Calculate probabilities of visiting adjacent unvisited attractions
     def visit_probabilistic_attraction(self, pheromone_trails):
@@ -65,8 +65,8 @@ class Ant:
         for attraction in possible_attractions:
             possible_indexes.append(attraction)
             pheromones_on_path = math.pow(pheromone_trails[current_attraction][attraction], ALPHA)
-            heuristic_for_path = math.pow(1 / attraction_distances[current_attraction][attraction], BETA)
-            probability = pheromones_on_path * heuristic_for_path
+            heuristic_for_path = math.pow(20/ attraction_distances[current_attraction][attraction], BETA)
+            probability = pheromones_on_path + heuristic_for_path
             possible_probabilities.append(probability)
             total_probabilities += probability
         possible_probabilities = [probability / total_probabilities for probability in possible_probabilities]
@@ -84,8 +84,9 @@ class Ant:
             slices.append([possible_indexes[i], total, total + possible_probabilities[i]])
             total += possible_probabilities[i]
         spin = random.random()
-        result = [s[0] for s in slices if s[1] < spin <= s[2]]
-        return result[0]
+        for s in slices:
+            if s[1] < spin <= s[2]:
+                return s[0]
 
     # Get the total distance travelled by this ant
     def get_distance_travelled(self):
@@ -167,8 +168,13 @@ class ACO:
         for x in range(0, ATTRACTION_COUNT):
             for y in range(0, ATTRACTION_COUNT):
                 self.pheromone_trails[x][y] = self.pheromone_trails[x][y] * evaporation_rate
-                for ant in self.ant_colony:
-                    self.pheromone_trails[x][y] += 1 / ant.get_distance_travelled()
+
+        for ant in self.ant_colony:
+            distance = ant.get_distance_travelled()
+            for i in range(1, ATTRACTION_COUNT - 1):
+                x, y = ant.visited_attractions[i - 1], ant.visited_attractions[i]
+                self.pheromone_trails[x][y] += 1 / distance
+                self.pheromone_trails[y][x] += 1 / distance
 
     # Tie everything together - this is the main loop
     def solve(self, total_iterations, evaporation_rate):
