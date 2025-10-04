@@ -244,7 +244,7 @@ def execute_random_brute_force():
 def train_with_q_learning(observation_space, action_space, number_of_iterations, learning_rate, discount,
                           chance_of_random_move):
     # Initialize the Q-table
-    q_table = np.zeros([observation_space, action_space], dtype=np.int8)
+    q_table = np.zeros([observation_space, action_space], dtype=np.int32)
 
     # Repeat for a number of iterations
     for i in range(number_of_iterations):

@@ -1,21 +1,31 @@
-cycler==0.10.0
-entrypoints==0.3
-flake8==3.7.9
-joblib==0.14.1
-kiwisolver==1.2.0
-matplotlib==3.7.1
-mccabe==0.6.1
-numpy==1.18.4
-pandas==1.0.3
-pycodestyle==2.5.0
-pydotplus==2.0.2
-pyflakes==2.1.1
-pyparsing==2.4.7
-python-dateutil==2.8.1
-pytz==2020.1
-scikit-learn==0.22.2.post1
-scipy==1.4.1
-seaborn==0.10.1
-six==1.14.0
-sklearn==0.0
-torch
+# Core scientific stack
+numpy>=1.26,<3
+scipy>=1.11
+pandas>=2.2
+matplotlib>=3.8
+seaborn>=0.13
+
+# Machine learning
+scikit-learn>=1.4
+joblib>=1.3
+
+# Utilities
+python-dateutil>=2.8
+pytz>=2024.1
+cycler>=0.11
+kiwisolver>=1.4
+pyparsing>=3.1
+six>=1.16
+
+# Optional linting tools
+flake8>=7.0
+mccabe>=0.7
+pycodestyle>=2.11
+pyflakes>=3.2
+
+# Deep learning (required for Chapters 9, 11, 12)
+torch>=2.3
+
+# Visualization helpers
+entrypoints>=0.4
+pydotplus>=2.0.2
