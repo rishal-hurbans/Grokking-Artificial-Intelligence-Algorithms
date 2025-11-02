@@ -1,12 +1,17 @@
+import math
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
 import torch
 import torch.nn as nn
-import numpy as np
-import matplotlib.pyplot as plt
-import math
 
 # Use a GPU if available, otherwise use the CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 print(f"Using device: {device}")
+
+# Where to persist the trained model so the script works regardless of CWD
+MODEL_PATH = Path(__file__).resolve().parent / "trained_pytorch_unet_model.pth"
 
 # Step 1: Define the Training Data
 print("\nStep 1: Defining The Training Data")
@@ -225,5 +230,5 @@ plt.show()
 
 # Save the Trained Model Weights
 print("\nSaving Model Weights")
-torch.save(model.state_dict(), '/trained_pytorch_unet_model.pth')
-print("Model weights saved to 'trained_unet_model.pth'")
+torch.save(model.state_dict(), str(MODEL_PATH))
+print(f"Model weights saved to '{MODEL_PATH}'")

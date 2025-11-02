@@ -1,8 +1,10 @@
+import math
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
 import torch
 import torch.nn as nn
-import numpy as np
-import matplotlib.pyplot as plt
-import math
 
 # Step 1: Setup and Model Definition
 print("Step 1: Setting up environment and model definition")
@@ -54,11 +56,12 @@ class UNet(nn.Module):
 print("\nStep 2: Loading Model and Defining Helpers")
 # Initialize the model and load the saved weights
 model = UNet().to(device)
+MODEL_PATH = Path(__file__).resolve().parent / "trained_pytorch_unet_model.pth"
 try:
-    model.load_state_dict(torch.load('/trained_pytorch_unet_model.pth', map_location=device))
+    model.load_state_dict(torch.load(str(MODEL_PATH), map_location=device))
     print("Successfully loaded trained U-Net model weights.")
 except FileNotFoundError:
-    print("Error: 'trained_unet_model.pth' not found.")
+    print(f"Error: '{MODEL_PATH}' not found.")
     print("Please run the training script first to create the model file.")
     exit()
 model.eval() # Set the model to evaluation mode

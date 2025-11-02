@@ -1,7 +1,9 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import math
 import pickle
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Seed randomness for reproducibility
 np.random.seed(42)
@@ -287,6 +289,9 @@ class NumPyUNet:
             if f'{name}_b' in params: layer.b = params[f'{name}_b']
             if f'{name}_gamma' in params: layer.gamma = params[f'{name}_gamma']
             if f'{name}_beta' in params: layer.beta = params[f'{name}_beta']
+
+# Where to persist the trained model so the script works regardless of CWD
+MODEL_PATH = Path(__file__).resolve().parent / "trained_numpy_unet_model.pkl"
 
 # Step 1: Define The Training Data
 print("\nStep 1: Defining The Training Data")
@@ -577,6 +582,6 @@ plt.grid(True)
 plt.show()
 
 print("\n--- Saving Model Weights ---")
-with open('trained_numpy_unet_model.pkl', 'wb') as f:
+with MODEL_PATH.open('wb') as f:
     pickle.dump(model.get_params(), f)
-print("Model weights saved to 'trained_numpy_unet_model.pkl'")
+print(f"Model weights saved to '{MODEL_PATH}'")

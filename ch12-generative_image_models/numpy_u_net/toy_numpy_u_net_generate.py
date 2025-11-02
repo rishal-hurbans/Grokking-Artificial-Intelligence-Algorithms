@@ -1,7 +1,9 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import math
 import pickle
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Step 0: Redefine the NumPy Layers and UNet Class
 # We must have the exact same class definitions as the training script
@@ -160,13 +162,14 @@ class NumPyUNet:
 # Step 1: Load Model and Define Helpers
 print("\nStep 1: Loading Model and Defining Helpers")
 model = NumPyUNet()
+MODEL_PATH = Path(__file__).resolve().parent / "trained_numpy_unet_model.pkl"
 try:
-    with open('trained_numpy_unet_model.pkl', 'rb') as f:
+    with MODEL_PATH.open('rb') as f:
         params = pickle.load(f)
     model.set_params(params)
     print("Successfully loaded trained NumPy U-Net model weights.")
 except FileNotFoundError:
-    print("Error: 'trained_numpy_unet_model.pkl' not found.")
+    print(f"Error: '{MODEL_PATH}' not found.")
     print("Please run the NumPy training script first.")
     exit()
 
