@@ -2,10 +2,6 @@
 
 [Get Grokking Artificial Intelligence Algorithms at Manning Publications](https://www.manning.com/books/grokking-artificial-intelligence-algorithms?a_aid=gaia&a_bid=6a1b836a) 
 
-Rather Learn by exploring the code notebook in your browser? Click here:
-
-[![Open the interactive code notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rishal-hurbans/Grokking-Artificial-Intelligence-Algorithms-Notebook/blob/main/Grokking_Artificial_Intelligence_Algorithms_Notebook.ipynb)
-
 ## Requirements
 * Python 3.9 or later (3.11 recommended)
 * pip 23.1+ (comes with recent Python installers)
@@ -45,4 +41,8 @@ The example implementations provided will make more sense if you've read the boo
 
 The purpose of this repository is to act as a practical reference for examples of how the algorithms mentioned in the book can be implemented.
 This repository should not be consulted as the book is read page-by-page, but rather, when you're attempting to implement an algorithm or gain a more technical understanding from a programming perspective.
+
+Rather Learn by exploring the code notebook in your browser? Click here:
+
+[![Open the interactive code notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rishal-hurbans/Grokking-Artificial-Intelligence-Algorithms-Notebook/blob/main/Grokking_Artificial_Intelligence_Algorithms_Notebook.ipynb)
 
