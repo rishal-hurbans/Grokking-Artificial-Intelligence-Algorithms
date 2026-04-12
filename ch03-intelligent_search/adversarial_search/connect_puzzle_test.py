@@ -1,4 +1,5 @@
 import connect_ai_alpha_beta_pruning as caab
+import connect_ai as cai
 import connect_puzzle as cp
 
 # Initialize a Connect game with default board size
@@ -47,6 +48,7 @@ connect.print_board()
 print(connect.get_score_for_ai())
 
 chosen_move = caab.choose_move(connect, 100)
+#chosen_move = cai.choose_move(connect, 100)
 print('MOVE: ', chosen_move)
 connect.play_move(chosen_move)
 print(connect.get_score_for_ai())
