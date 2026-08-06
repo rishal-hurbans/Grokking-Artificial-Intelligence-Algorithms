@@ -74,6 +74,8 @@ class Connect:
                     return True
                 elif self.has_row_of_x_from_point(player, row_count, x, y, 1, 1):  # Diagonal row
                     return True
+                elif self.has_row_of_x_from_point(player, row_count, x, y, 1, -1):  # Anti-diagonal row
+                    return True
         return False
 
     # Determine if a player has a row given a starting point and offset

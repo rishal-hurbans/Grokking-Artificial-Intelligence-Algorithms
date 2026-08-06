@@ -152,25 +152,29 @@ def two_point_crossover(parent_a, parent_b, xover_point_1, xover_point_2):
 # Randomly mutate children
 def mutate_children(children, mutation_rate):
     for child in children:
-        random_index = random.randint(0, mutation_rate)
-        if child[INDIVIDUAL_CHROMOSOME_INDEX][random_index] == '1':
-            mutated_child = list(child[INDIVIDUAL_CHROMOSOME_INDEX])
+        chromosome = child[INDIVIDUAL_CHROMOSOME_INDEX]
+        random_index = random.randint(0, min(mutation_rate, len(chromosome) - 1))
+        if chromosome[random_index] == '1':
+            mutated_child = list(chromosome)
             mutated_child[random_index] = '0'
-            child[INDIVIDUAL_CHROMOSOME_INDEX] = mutated_child
+            child[INDIVIDUAL_CHROMOSOME_INDEX] = ''.join(mutated_child)
         else:
-            mutated_child = list(child[INDIVIDUAL_CHROMOSOME_INDEX])
+            mutated_child = list(chromosome)
             mutated_child[random_index] = '1'
-            child[INDIVIDUAL_CHROMOSOME_INDEX] = mutated_child
+            child[INDIVIDUAL_CHROMOSOME_INDEX] = ''.join(mutated_child)
     return children
 
 
 # Reproduce children given selected individuals
 def reproduce_children(chosen_selections):
     children = []
-    for parent_index in range(len(chosen_selections)//2 - 1):
-        children = one_point_crossover(chosen_selections[parent_index],
-                                       chosen_selections[parent_index + 1],
-                                       CROSSOVER_POSITION_1)
+    for parent_index in range(0, len(chosen_selections) - 1, 2):
+        child_chromosomes = one_point_crossover(
+            chosen_selections[parent_index][INDIVIDUAL_CHROMOSOME_INDEX],
+            chosen_selections[parent_index + 1][INDIVIDUAL_CHROMOSOME_INDEX],
+            CROSSOVER_POSITION_1
+        )
+        children.extend([[chromosome, 0, 0] for chromosome in child_chromosomes])
     return children
 
 
@@ -216,9 +220,10 @@ def run_ga():
     # global_population = roulette_wheel_selection(global_population, 100)
 
 
-# Run the genetic algorithm for a number of iterations
-for i in range(0, NUMBER_OF_ITERATIONS):
-    run_ga()
+if __name__ == '__main__':
+    # Run the genetic algorithm for a number of iterations
+    for i in range(0, NUMBER_OF_ITERATIONS):
+        run_ga()
 
 # print(calculate_individual_fitness('01100100010110001110001001', 6404180))
 # print(calculate_individual_fitness('00110101000100011010001000', 6404180))

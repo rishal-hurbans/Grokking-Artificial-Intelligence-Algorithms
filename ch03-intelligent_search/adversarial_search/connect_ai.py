@@ -38,7 +38,7 @@ def minmax(connect, depth, min_or_max, move):
     best_score = INFINITY_NEGATIVE * min_or_max
     best_max_move = -1
     # Get possible moves given the board size
-    moves = random.sample(range(0, connect.board_size_y + 1), connect.board_size_x)
+    moves = random.sample(range(0, connect.board_size_x), connect.board_size_x)
     # Try each move
     for slot in moves:
         neighbor = copy.deepcopy(connect)
@@ -49,5 +49,5 @@ def minmax(connect, depth, min_or_max, move):
             # Update the best score and best move
             if (min_or_max == MAX and best.value > best_score) or (min_or_max == MIN and best.value < best_score):
                 best_score = best.value
-                best_max_move = best.move
+                best_max_move = slot
     return Move(best_max_move, best_score)

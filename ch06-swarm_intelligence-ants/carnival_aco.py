@@ -1,6 +1,7 @@
 import csv
 import random
 import math
+from pathlib import Path
 
 # Ant Colony Optimization (ACO)
 # The Ant Colony Optimization algorithm is inspired by the behavior of ants moving between destinations, dropping
@@ -14,7 +15,8 @@ ATTRACTION_COUNT = 48
 # Initialize the 2D matrix for storing distances between attractions
 attraction_distances = []
 # Read attraction distance data set store it in matrix
-with open('attractions-' + str(ATTRACTION_COUNT) + '.csv') as file:
+DATA_FILE = Path(__file__).resolve().parent / ('attractions-' + str(ATTRACTION_COUNT) + '.csv')
+with open(DATA_FILE) as file:
     reader = csv.reader(file, quoting=csv.QUOTE_NONNUMERIC)
     for row in reader:
         attraction_distances.append(row)
@@ -51,8 +53,8 @@ class Ant:
     # Select an attraction using a random chance
     def visit_random_attraction(self):
         all_attractions = set(range(0, ATTRACTION_COUNT))
-        possible_attractions = all_attractions - set(self.visited_attractions)
-        return random.randint(0, len(possible_attractions) - 1)
+        possible_attractions = sorted(all_attractions - set(self.visited_attractions))
+        return possible_attractions[random.randint(0, len(possible_attractions) - 1)]
 
     # Calculate probabilities of visiting adjacent unvisited attractions
     def visit_probabilistic_attraction(self, pheromone_trails):
@@ -167,14 +169,21 @@ class ACO:
         for x in range(0, ATTRACTION_COUNT):
             for y in range(0, ATTRACTION_COUNT):
                 self.pheromone_trails[x][y] = self.pheromone_trails[x][y] * evaporation_rate
-                for ant in self.ant_colony:
-                    self.pheromone_trails[x][y] += 1 / ant.get_distance_travelled()
+        for ant in self.ant_colony:
+            pheromone_update = 1 / ant.get_distance_travelled()
+            for attraction_index in range(1, len(ant.visited_attractions)):
+                start_attraction = ant.visited_attractions[attraction_index - 1]
+                end_attraction = ant.visited_attractions[attraction_index]
+                self.pheromone_trails[start_attraction][end_attraction] += pheromone_update
+            start_attraction = ant.visited_attractions[-1]
+            end_attraction = ant.visited_attractions[0]
+            self.pheromone_trails[start_attraction][end_attraction] += pheromone_update
 
     # Tie everything together - this is the main loop
     def solve(self, total_iterations, evaporation_rate):
         self.setup_pheromones()
-        for i in range(0, TOTAL_ITERATIONS):
-            self.setup_ants(NUMBER_OF_ANTS_FACTOR)
+        for i in range(0, total_iterations):
+            self.setup_ants(self.number_of_ants_factor)
             for r in range(0, ATTRACTION_COUNT - 1):
                 self.move_ants(self.ant_colony)
             self.update_pheromones(evaporation_rate)
@@ -188,5 +197,8 @@ NUMBER_OF_ANTS_FACTOR = 0.5
 TOTAL_ITERATIONS = 10000
 # Set the rate of pheromone evaporation (0.0 - 1.0)
 EVAPORATION_RATE = 0.4
-aco = ACO(NUMBER_OF_ANTS_FACTOR)
-aco.solve(TOTAL_ITERATIONS, EVAPORATION_RATE)
+
+
+if __name__ == '__main__':
+    aco = ACO(NUMBER_OF_ANTS_FACTOR)
+    aco.solve(TOTAL_ITERATIONS, EVAPORATION_RATE)

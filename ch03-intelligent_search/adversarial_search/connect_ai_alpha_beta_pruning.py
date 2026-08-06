@@ -49,11 +49,11 @@ def minmax(connect, depth, min_or_max, move, alpha, beta):
             # Update the best score and best move, ignore irrelevant scores using alpha beta pruning
             if (min_or_max == MAX and best.value > best_score) or (min_or_max == MIN and best.value < best_score):
                 best_score = best.value
-                best_max_move = best.move
-                if best_score >= alpha:
-                    alpha = best_score
-                if best_score <= beta:
-                    beta = best_score
+                best_max_move = slot
+                if min_or_max == MAX:
+                    alpha = max(alpha, best_score)
+                else:
+                    beta = min(beta, best_score)
             if alpha >= beta:
                 break
     return Move(best_max_move, best_score)

@@ -145,8 +145,10 @@ class Simulator:
         state = ''
         for x in range(-1, 2):
             for y in range(-1, 2):
-                if self.is_within_bounds(x, y):
-                    state += self.road[x][y]
+                target_x = self.agent_x + x
+                target_y = self.agent_y + y
+                if self.is_within_bounds(target_x, target_y):
+                    state += self.road[target_x][target_y]
                 else:
                     state += ROAD_OUT_OF_BOUNDS
         if state not in self.states:
@@ -283,6 +285,13 @@ def train_with_q_learning(observation_space, action_space, number_of_iterations,
     return q_table
 
 
+def print_q_learning_summary(number_of_episodes, total_epochs, total_penalties_person, total_penalties_car):
+    print('Results after ', number_of_episodes, 'episodes:')
+    print('Average time steps per episode: ', total_epochs / number_of_episodes)
+    print('Average person penalties per episode: ', total_penalties_person / number_of_episodes)
+    print('Average car penalties per episode: ', total_penalties_car / number_of_episodes)
+
+
 # Use the trained Q-table to navigate the map to the goal, to test the training
 def execute_with_q_learning(q_table, number_of_episodes):
     total_epochs = 0
@@ -323,10 +332,7 @@ def execute_with_q_learning(q_table, number_of_episodes):
         total_penalties_car += penalties_car
         total_epochs += epochs
 
-    print('Results after ', number_of_episodes, 'episodes:')
-    print('Average time steps per episode: ', total_epochs / number_of_episodes)
-    print('Average person penalties per episode: ', total_penalties_person / number_of_episodes)
-    print('Average car penalties per episode: ', total_penalties_person / number_of_episodes)
+    print_q_learning_summary(number_of_episodes, total_epochs, total_penalties_person, total_penalties_car)
 
 
 if __name__ == '__main__':
