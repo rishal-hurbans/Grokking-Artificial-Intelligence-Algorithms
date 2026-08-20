@@ -7,6 +7,7 @@ connect = cp.Connect()
 while connect.has_winner() == 0:
     connect.print_turn()
     connect.play_move(caiab.choose_move(connect, SEARCH_DEPTH))
+    #connect.play_move(cai.choose_move(connect, SEARCH_DEPTH))
     connect.print_board()
     print(connect.has_winner())
 
